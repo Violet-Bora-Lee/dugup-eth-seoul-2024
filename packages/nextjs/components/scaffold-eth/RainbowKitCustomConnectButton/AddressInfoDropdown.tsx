@@ -10,9 +10,8 @@ import {
   CheckCircleIcon,
   ChevronDownIcon,
   DocumentDuplicateIcon,
-  QrCodeIcon,
 } from "@heroicons/react/24/outline";
-import { BlockieAvatar, isENS } from "~~/components/scaffold-eth";
+import { isENS } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 import { getTargetNetworks } from "~~/utils/scaffold-eth";
 
@@ -25,12 +24,7 @@ type AddressInfoDropdownProps = {
   ensAvatar?: string;
 };
 
-export const AddressInfoDropdown = ({
-  address,
-  ensAvatar,
-  displayName,
-  blockExplorerAddressLink,
-}: AddressInfoDropdownProps) => {
+export const AddressInfoDropdown = ({ address, displayName, blockExplorerAddressLink }: AddressInfoDropdownProps) => {
   const { disconnect } = useDisconnect();
   const checkSumAddress = getAddress(address);
 
@@ -48,9 +42,8 @@ export const AddressInfoDropdown = ({
     <>
       <details ref={dropdownRef} className="dropdown dropdown-end leading-3">
         <summary tabIndex={0} className="btn btn-secondary btn-sm pl-0 pr-2 shadow-md dropdown-toggle gap-0 !h-auto">
-          <BlockieAvatar address={checkSumAddress} size={30} ensImage={ensAvatar} />
           <span className="ml-2 mr-1">
-            {isENS(displayName) ? displayName : checkSumAddress?.slice(0, 6) + "..." + checkSumAddress?.slice(-4)}
+            {isENS(displayName) ? displayName : checkSumAddress?.slice(0, 4) + "..." + checkSumAddress?.slice(-4)}
           </span>
           <ChevronDownIcon className="h-6 w-4 ml-2 sm:ml-0" />
         </summary>
@@ -87,12 +80,6 @@ export const AddressInfoDropdown = ({
                 </div>
               </CopyToClipboard>
             )}
-          </li>
-          <li className={selectingNetwork ? "hidden" : ""}>
-            <label htmlFor="qrcode-modal" className="btn-sm !rounded-xl flex gap-3 py-3">
-              <QrCodeIcon className="h-6 w-4 ml-2 sm:ml-0" />
-              <span className="whitespace-nowrap">View QR Code</span>
-            </label>
           </li>
           <li className={selectingNetwork ? "hidden" : ""}>
             <button className="menu-item btn-sm !rounded-xl flex gap-3 py-3" type="button">
