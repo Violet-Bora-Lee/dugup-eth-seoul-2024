@@ -2,6 +2,8 @@
 
 - [https://devfolio.co/projects/dug-up-f384](https://devfolio.co/projects/dug-up-f384)
 
+> We've developed it using [scaffold.io](https://scaffoldeth.io/) . I was able to delete the commit history of the scaffold team or the commit history of open-source contributors and create a new repository, but I left the commit intact **because it violates the open-source spirit**.
+
 ## The problem DUGUP solves
 
 ### Beyond Fan to Earn: Growing My Star Together
