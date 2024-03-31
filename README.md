@@ -1,5 +1,7 @@
 # DUGUP - WEB3 FANDOM SOCIAL NETWORK (by Halliday)
 
+- [https://devfolio.co/projects/dug-up-f384](https://devfolio.co/projects/dug-up-f384)
+
 ## The problem DUGUP solves
 
 ### Beyond Fan to Earn: Growing My Star Together
